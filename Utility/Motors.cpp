@@ -11,7 +11,7 @@
 using namespace std;
 
 // stepAngle = (Step angle / gear reduction ratio) = (5.625 / 63.68395)
-static const float stepAngle = 0.0883268076179f;
+//static const float stepAngle = 0.0883268076179f;
 
 
 /////////////////Functions of Motor Class/////////////
@@ -50,7 +50,6 @@ void StepperMotor::run(ROT_DIRECTION direction, unsigned angle, unsigned speed)
 
 	//enable
 	HAL_GPIO_WritePin(this->HWSetting->GPIO_EN, this->HWSetting->GPIO_PinEN, GPIO_PIN_RESET);
-	HAL_Delay(1);
 
 	//dir
 	if (direction==RIGHT)
@@ -62,7 +61,6 @@ void StepperMotor::run(ROT_DIRECTION direction, unsigned angle, unsigned speed)
 		HAL_GPIO_WritePin(this->HWSetting->GPIO_DIR, this->HWSetting->GPIO_PinDIR, GPIO_PIN_SET);
 	}
 
-	HAL_Delay(1);
 
 	//pulse
 	HAL_TIM_PWM_Start_IT(&ht, this->HWSetting->TIMCHANNEL);

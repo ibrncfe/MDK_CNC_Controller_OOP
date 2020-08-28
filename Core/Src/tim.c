@@ -42,7 +42,7 @@ void MX_TIM1_Init(void)
   htim1.Init.Period = 500;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
-  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
   {
     Error_Handler();
@@ -185,7 +185,7 @@ void MX_TIM10_Init(void)
   TIM_OC_InitTypeDef sConfigOC = {0};
 
   htim10.Instance = TIM10;
-  htim10.Init.Prescaler = 480;
+  htim10.Init.Prescaler = 24;
   htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim10.Init.Period = 10;
   htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -299,8 +299,8 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
 
   /* USER CODE END TIM2_MspPostInit 0 */
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**TIM2 GPIO Configuration    
-    PA15     ------> TIM2_CH1 
+    /**TIM2 GPIO Configuration
+    PA15     ------> TIM2_CH1
     */
     GPIO_InitStruct.Pin = ROTSTPULSE_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -318,10 +318,10 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
   /* USER CODE BEGIN TIM3_MspPostInit 0 */
 
   /* USER CODE END TIM3_MspPostInit 0 */
-  
+
     __HAL_RCC_GPIOB_CLK_ENABLE();
-    /**TIM3 GPIO Configuration    
-    PB4     ------> TIM3_CH1 
+    /**TIM3 GPIO Configuration
+    PB4     ------> TIM3_CH1
     */
     GPIO_InitStruct.Pin = SERVOPULSE_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -339,10 +339,10 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
   /* USER CODE BEGIN TIM5_MspPostInit 0 */
 
   /* USER CODE END TIM5_MspPostInit 0 */
-  
+
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**TIM5 GPIO Configuration    
-    PA1     ------> TIM5_CH2 
+    /**TIM5 GPIO Configuration
+    PA1     ------> TIM5_CH2
     */
     GPIO_InitStruct.Pin = FEEDPULSE_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -447,7 +447,7 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* tim_pwmHandle)
 
   /* USER CODE END TIM2_MspDeInit 1 */
   }
-} 
+}
 
 /* USER CODE BEGIN 1 */
 

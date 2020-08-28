@@ -91,9 +91,9 @@ public:
 		setting_pulse_revolution = spr;
 	}
 
-	unsigned int getID(void) { return id; }
-	const char* getDescription(void) { return description; }
-	RUNSTATE isRunning(void) const { return running; }
+  virtual	unsigned int getID(void) { return id; }
+	virtual const char* getDescription(void) { return description; }
+  virtual RUNSTATE isRunning(void) const { return running; }
 
 	void setRequiredPosition(unsigned int required_pos);
 	void setCurrentPosition(unsigned int current_position);
@@ -120,6 +120,22 @@ class ServoMotor : Motor
 public:
 	unsigned int req_pos;                    // symmetric threshold in degrees
 	unsigned int cur_pos;                       // current position in degrees
+	HW_PWM_SETTING* HWSetting;
+
+
+
+	void setting(unsigned int a_id = 0, const char* a_description = 0, RUNSTATE a_running = NOT_RUNNING, unsigned int a_velocity = 0)
+	{	
+		id = a_id;
+		description = a_description;
+		running = a_running;
+		velocity = a_velocity;
+	}
+	
+	void setRequiredPosition(unsigned int required_pos){req_pos = required_pos;}
+	void setCurrentPosition(unsigned int current_position){cur_pos = current_position;}
+	unsigned getRequiredPosition(void) const { return req_pos; }
+	int getCurrentPosition(void) const { return cur_pos; }
 
 	void RunServo(int direction, unsigned angle, unsigned speed);
 

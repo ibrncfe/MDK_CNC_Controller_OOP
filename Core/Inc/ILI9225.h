@@ -139,7 +139,7 @@ struct currentFont
     uint8_t offset;
     uint8_t numchars;
     uint8_t nbrows;
-    _Bool    monoSp;
+//    _Bool    monoSp;
 };
 
 extern uint8_t Terminal6x8[];

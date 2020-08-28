@@ -81,6 +81,7 @@ uint8_t motionrateReceived = 0;
 
 static uint32_t DIFFERENCE_MOTIONRATE = 0;
 
+extern TIM_HandleTypeDef htim5;
 
 //uint16_t I = 0;
 

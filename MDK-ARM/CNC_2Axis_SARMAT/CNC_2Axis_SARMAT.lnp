@@ -1,7 +1,5 @@
 --cpu=Cortex-M4.fp.sp
 "cnc_2axis_sarmat\startup_stm32f411xe.o"
-"cnc_2axis_sarmat\ili9225.o"
-"cnc_2axis_sarmat\pioneer.o"
 "cnc_2axis_sarmat\main.o"
 "cnc_2axis_sarmat\gpio.o"
 "cnc_2axis_sarmat\adc.o"
@@ -11,7 +9,8 @@
 "cnc_2axis_sarmat\usart.o"
 "cnc_2axis_sarmat\stm32f4xx_it.o"
 "cnc_2axis_sarmat\stm32f4xx_hal_msp.o"
-"cnc_2axis_sarmat\rnk.o"
+"cnc_2axis_sarmat\motors.o"
+"cnc_2axis_sarmat\pioneer_1.o"
 "cnc_2axis_sarmat\vni8200xp.o"
 "cnc_2axis_sarmat\clt01_38s.o"
 "cnc_2axis_sarmat\stm32f4xx_nucleo.o"
@@ -39,4 +38,4 @@
 --library_type=microlib --strict --scatter "CNC_2Axis_SARMAT\CNC_2Axis_SARMAT.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list "CNC_2Axis_SARMAT.map" -o CNC_2Axis_SARMAT\CNC_2Axis_SARMAT.axf
+--list "C:\Users\user\Documents\CNC_2Axis_SARMAT.map" -o CNC_2Axis_SARMAT\CNC_2Axis_SARMAT.axf

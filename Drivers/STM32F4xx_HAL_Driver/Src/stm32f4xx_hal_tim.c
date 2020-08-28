@@ -453,7 +453,7 @@ HAL_StatusTypeDef HAL_TIM_Base_Start_IT(TIM_HandleTypeDef *htim)
   /* Return function status */
   return HAL_OK;
 }
- 
+
 /**
   * @brief  Stops the TIM Base generation in interrupt mode.
   * @param  htim TIM Base handle
@@ -3202,7 +3202,7 @@ void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
   /* Capture compare 2 event */
   if (__HAL_TIM_GET_FLAG(htim, TIM_FLAG_CC2) != RESET)
   {
-           if (__HAL_TIM_GET_IT_SOURCE(htim, TIM_IT_CC2) != RESET)
+    if (__HAL_TIM_GET_IT_SOURCE(htim, TIM_IT_CC2) != RESET)
     {
       __HAL_TIM_CLEAR_IT(htim, TIM_IT_CC2);
       htim->Channel = HAL_TIM_ACTIVE_CHANNEL_2;
